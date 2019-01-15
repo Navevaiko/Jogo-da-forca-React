@@ -1,0 +1,18 @@
+.reload-button {
+    display: block;
+    padding: 10px;
+    border-radius: 2px;
+    margin: 15px auto 0;
+    border:solid 1px #aaa;
+    background: #fff;
+    color: #aaa;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s linear;
+}
+
+.reload-button:hover {
+    background: #aaa;
+    color: #fff;
+}

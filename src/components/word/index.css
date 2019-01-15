@@ -1,0 +1,15 @@
+.word {
+    display: flex;
+    margin: 20px auto 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter {
+    min-width: 30px;
+    min-height: 30px;
+    border-bottom: solid 1px #000;
+    text-align: center;
+    margin-left: 15px;
+    font-size: 18px;
+}

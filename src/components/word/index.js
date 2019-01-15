@@ -10,7 +10,7 @@ export default class Word extends Component {
         return (
             <div className='word'> 
                 { word.split('').map((letter, index) => (
-                    <span key={index} className='letter'> {  } </span>
+                    <span key={index} className='letter'> { letter } </span>
                 )) } 
             </div>
         );

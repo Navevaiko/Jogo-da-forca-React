@@ -26,8 +26,16 @@
     font-size: 18px;
     border-radius: 2px;
     transition: all 0.2 linear;
+    user-select: none;
 }
 
 .keyboard .key:hover {
     opacity: 0.5;
 }
+
+.keyboard .right-key:hover, .wrong-key:hover, .disabled-key:hover { opacity: 1 !important; cursor: not-allowed; }
+
+.keyboard .right-key { background:#b4d7ac; color:#58834f; }
+.keyboard .wrong-key { background:#d7b3ac; color:#7b564f; }
+
+.keyboard .disabled-key { background:#efefef; color:#d8d3d3; }

@@ -20,14 +20,34 @@ export default class Keyboard extends Component {
         this.setState({ keys: keyboard });
     }
 
+    renderKey = (key, index) => {
+        const { rightLetters, wrongLetters, onKeyClick, gameStatus } = this.props;
+        let keyClass = 'key', keyClick = () => onKeyClick(key);
+
+        if(gameStatus === 1 || gameStatus === 0) {
+            keyClass += ' disabled-key';
+            keyClick = () => {};
+        }else{
+
+            if(rightLetters.indexOf(key.toLowerCase()) !== -1) {
+                keyClass += ' right-key';
+                keyClick = () => {};
+            }else if(wrongLetters.indexOf(key.toLowerCase()) !== -1) {
+                keyClass += ' wrong-key';
+                keyClick = () => {};
+            }
+
+        }
+
+        return <span key={index} className={keyClass} onClick={ keyClick }>{ key }</span>
+    }
+
     render() {
         const { keys } = this.state;
 
         return (
             <div className='keyboard'>
-                {keys.map((key, index) => (
-                    <span key={index} className='key'>{ key }</span>
-                ))}
+                {keys.map((key, index) => this.renderKey(key, index)) }
             </div>
         );
     }

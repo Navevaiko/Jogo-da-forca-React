@@ -5,11 +5,14 @@
     align-items: center;
 }
 
-.letter {
+.letter, .empty-letter {
     min-width: 30px;
     min-height: 30px;
-    border-bottom: solid 1px #000;
     text-align: center;
     margin-left: 15px;
     font-size: 18px;
+}
+
+.letter {
+    border-bottom: solid 1px #000;
 }

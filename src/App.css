@@ -23,6 +23,8 @@
     left: 15px;
     padding: 20px;
     border-radius: 5px;
+    border: solid 1px #d2d571;
+    color: #d2d571;
 }
 
 .win { border: solid 1px #b4d7ac; color: #b4d7ac; }

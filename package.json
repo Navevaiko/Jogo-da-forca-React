@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "aphrodite": "^2.2.3",
     "react": "^16.7.0",
+    "react-animations": "^1.0.0",
     "react-dom": "^16.7.0",
     "react-scripts": "2.1.3"
   },

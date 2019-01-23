@@ -8,6 +8,7 @@ export default class Keyboard extends Component {
     };
 
     componentDidMount() {
+        // Montando o teclado a partir das letras 
         const keyboard = [];
 		let currentNumber = 65;
 		let finalNumber = 65 + 25;
@@ -18,6 +19,16 @@ export default class Keyboard extends Component {
         }
 
         this.setState({ keys: keyboard });
+
+        // Ligando função detectar o teclado fisíco
+        document.body.onkeydown = this.handleKeyPress;
+    }
+
+    handleKeyPress = (e) => {
+        const { onKeyClick, gameStatus } = this.props;
+        if(gameStatus !== 1 && gameStatus !== 0) {
+            onKeyClick(e.key);
+        }
     }
 
     renderKey = (key, index) => {

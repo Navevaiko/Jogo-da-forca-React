@@ -1,0 +1,96 @@
+#hangmen {
+    position: absolute;
+    width: 100px;
+    top:75px;
+    right: 65px;
+}
+
+#hang {
+    position: absolute;
+    width:0px;
+    height: 250px;
+    border:solid 1px #aaa;
+    left: -25px;
+    top: -30px;
+}
+
+#hang::after {
+    position: absolute;
+    display: block;
+    content: '';
+    top:0px;
+    width: 75px;
+    border: solid 1px #aaa;
+}
+
+#hang::before {
+    position: absolute;
+    display: block;
+    content: '';
+    top:0px;
+    left:75px;
+    width: 0;
+    height: 30px;
+    border: solid 1px #aaa;
+}
+
+#floor {
+    position: absolute;
+    width: 200px;
+    height: 0;
+    border:solid 1px #aaa;
+    bottom:-1px;
+    left: -35px;
+}
+
+#head {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    border:solid 2px #aaa;
+    margin: auto;
+}
+
+#body {
+    width:0;
+    height: 60px;
+    border:solid 1px #aaa;
+    margin: auto;
+}
+
+#right-arm, #left-arm {
+    position: absolute;
+    width:0;
+    height: 50px;
+    border: solid 1px #aaa;
+    top:70px;
+}
+
+#right-arm {
+    left:32px;
+    transform: rotateZ(45deg);
+}
+
+#left-arm {
+    right: 32px;
+    transform: rotate(-45deg);
+}
+
+#right-leg, #left-leg {
+    position: absolute;
+    height: 70px;
+    border: solid 1px #aaa;
+    top: 127px;
+}
+
+#right-leg {
+    left:39px;
+    transform: rotate(15deg);
+}
+
+#left-leg {
+    right: 40px;
+    transform: rotate(-15deg);
+}
+
+.invisible { display: none; }

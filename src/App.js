@@ -4,6 +4,7 @@ import { StyleSheet, css } from 'aphrodite';
 
 import Keyboard from './components/keyboard/';
 import Word from './components/word/';
+import Hangmen from './components/hangmen';
 import './App.css'
 
 class App extends Component {
@@ -22,14 +23,12 @@ class App extends Component {
 		let word = this.state.word;
 
 		// Escolhendo uma palavra aleatória e verificando se não é a palavra atual
-			while(this.state.word === word) {
+		while(this.state.word === word) {
 				const random = Math.floor(Math.random() * (words.length - 0)) + 0;
-			word = words[random];
+				word = words[random];
 		}
 
-		// Calculando as chances a partir da quantidade de letras não repetidas
-		let chances = Math.ceil(this.removeDuplicates(word).length * 0.3);
-		if(chances === 1) chances++;
+		const chances = 6;
 
 		this.setState({ word, rightLetters: [], wrongLetters: [], chances, gameStatus: `${chances} chances` });
   }
@@ -98,7 +97,9 @@ class App extends Component {
         <Word word={ word } rightLetters={ rightLetters } gameStatus={status} />
 
 				<h2 className={`${gameStatusClass} ${shakeAnimation}`}  > { gameStatus } </h2>				
-			
+				
+				<Hangmen chancesLeft={ chances } />
+
         <Keyboard gameStatus={status} onKeyClick={(key) => this.checkWord(key) } rightLetters={ rightLetters } wrongLetters={ wrongLetters } />
 
         <button className='reload-button' onClick={ this.generateWord }> New word </button>
